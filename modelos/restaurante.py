@@ -1,12 +1,17 @@
 
 
 class Restaurante:
-    nome = ''
-    categoria = ''
-    status = False
+    def __init__(self, nome: str, categoria: str): # selt -> Referência da instância
+        variaveis = [nome, categoria]
+        if not all(isinstance(var, str) for var in variaveis):
+            raise TypeError("Nome e categoria devem ser strings")
+        self.nome = nome
+        self.categoria = categoria
+        self.status = False
 
-restaurante_praca = Restaurante()
-restaurante_praca.nome = 'Praça'
-restaurante_praca.categoria = 'Gourmet'
+    def __str__(self):
+        return f'{self.nome} | {self.categoria}'
 
-print(vars(restaurante_praca))
+restaurante_praca = Restaurante('Praça', 'Gourmet')
+
+print(restaurante_praca)
