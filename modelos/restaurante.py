@@ -29,8 +29,3 @@ class Restaurante:
     
     def ativa_restaurante(self):
         self._status = not self._status
-
-restaurante_praca = Restaurante('Praça', 'Gourmet')
-restaurante_praca.ativa_restaurante()
-
-Restaurante.listar_restaurantes()
